@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F43F88BF1E7282FE00FDEF36 /* Innlogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88BE1E7282FE00FDEF36 /* Innlogging.swift */; };
+		F43F88C11E7296CA00FDEF36 /* GlemtPassord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C01E7296CA00FDEF36 /* GlemtPassord.swift */; };
+		F43F88C31E729B9F00FDEF36 /* Informasjon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C21E729B9F00FDEF36 /* Informasjon.swift */; };
+		F43F88C51E729BAE00FDEF36 /* KontaktOss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C41E729BAE00FDEF36 /* KontaktOss.swift */; };
+		F43F88C71E72A0F500FDEF36 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C61E72A0F500FDEF36 /* Facebook.swift */; };
+		F43F88C91E72A9F400FDEF36 /* Registrering.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C81E72A9F400FDEF36 /* Registrering.swift */; };
+		F43F88CB1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88CA1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift */; };
+		F43F88CD1E72AA4E00FDEF36 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88CC1E72AA4E00FDEF36 /* Regex.swift */; };
+		F43F88CF1E76402E00FDEF36 /* Hovedmeny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88CE1E76402E00FDEF36 /* Hovedmeny.swift */; };
+		F43F88D11E7648FA00FDEF36 /* Instillinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88D01E7648FA00FDEF36 /* Instillinger.swift */; };
 		F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */; };
-		F44D3E911E704BF0001463B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3E901E704BF0001463B0 /* ViewController.swift */; };
 		F44D3E941E704BF0001463B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E921E704BF0001463B0 /* Main.storyboard */; };
 		F44D3E961E704BF0001463B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E951E704BF0001463B0 /* Assets.xcassets */; };
 		F44D3E991E704BF0001463B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E971E704BF0001463B0 /* LaunchScreen.storyboard */; };
 		F44D3EA41E704BF0001463B0 /* MemoFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3EA31E704BF0001463B0 /* MemoFrameTests.swift */; };
 		F44D3EAF1E704BF0001463B0 /* MemoFrameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3EAE1E704BF0001463B0 /* MemoFrameUITests.swift */; };
+		F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */; };
+		F4B4FABC1E76C11C00D76CA2 /* TestViaKode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +45,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F43F88BE1E7282FE00FDEF36 /* Innlogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Innlogging.swift; sourceTree = "<group>"; };
+		F43F88C01E7296CA00FDEF36 /* GlemtPassord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlemtPassord.swift; sourceTree = "<group>"; };
+		F43F88C21E729B9F00FDEF36 /* Informasjon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Informasjon.swift; sourceTree = "<group>"; };
+		F43F88C41E729BAE00FDEF36 /* KontaktOss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KontaktOss.swift; sourceTree = "<group>"; };
+		F43F88C61E72A0F500FDEF36 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		F43F88C81E72A9F400FDEF36 /* Registrering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registrering.swift; sourceTree = "<group>"; };
+		F43F88CA1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistreringTilbakemelding.swift; sourceTree = "<group>"; };
+		F43F88CC1E72AA4E00FDEF36 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		F43F88CE1E76402E00FDEF36 /* Hovedmeny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hovedmeny.swift; sourceTree = "<group>"; };
+		F43F88D01E7648FA00FDEF36 /* Instillinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instillinger.swift; sourceTree = "<group>"; };
 		F44D3E8B1E704BF0001463B0 /* MemoFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F44D3E901E704BF0001463B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F44D3E931E704BF0001463B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F44D3E951E704BF0001463B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F44D3E981E704BF0001463B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +67,8 @@
 		F44D3EAA1E704BF0001463B0 /* MemoFrameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoFrameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44D3EAE1E704BF0001463B0 /* MemoFrameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFrameUITests.swift; sourceTree = "<group>"; };
 		F44D3EB01E704BF0001463B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brukerdetaljer.swift; sourceTree = "<group>"; };
+		F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViaKode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +96,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F43F88BC1E7282B500FDEF36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F44D3E971E704BF0001463B0 /* LaunchScreen.storyboard */,
+				F44D3E921E704BF0001463B0 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F43F88BD1E7282BE00FDEF36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F43F88BE1E7282FE00FDEF36 /* Innlogging.swift */,
+				F43F88C01E7296CA00FDEF36 /* GlemtPassord.swift */,
+				F43F88C21E729B9F00FDEF36 /* Informasjon.swift */,
+				F43F88C41E729BAE00FDEF36 /* KontaktOss.swift */,
+				F43F88C61E72A0F500FDEF36 /* Facebook.swift */,
+				F43F88C81E72A9F400FDEF36 /* Registrering.swift */,
+				F43F88CA1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift */,
+				F43F88CE1E76402E00FDEF36 /* Hovedmeny.swift */,
+				F43F88D01E7648FA00FDEF36 /* Instillinger.swift */,
+				F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */,
+				F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		F44D3E821E704BEF001463B0 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +146,10 @@
 		F44D3E8D1E704BF0001463B0 /* MemoFrame */ = {
 			isa = PBXGroup;
 			children = (
-				F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */,
-				F44D3E901E704BF0001463B0 /* ViewController.swift */,
-				F44D3E921E704BF0001463B0 /* Main.storyboard */,
-				F44D3E951E704BF0001463B0 /* Assets.xcassets */,
-				F44D3E971E704BF0001463B0 /* LaunchScreen.storyboard */,
-				F44D3E9A1E704BF0001463B0 /* Info.plist */,
+				F44D3EC01E727D84001463B0 /* Startup */,
+				F44D3EBC1E705D9E001463B0 /* Model */,
+				F43F88BC1E7282B500FDEF36 /* View */,
+				F43F88BD1E7282BE00FDEF36 /* Controller */,
 			);
 			path = MemoFrame;
 			sourceTree = "<group>";
@@ -123,6 +170,24 @@
 				F44D3EB01E704BF0001463B0 /* Info.plist */,
 			);
 			path = MemoFrameUITests;
+			sourceTree = "<group>";
+		};
+		F44D3EBC1E705D9E001463B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F44D3E951E704BF0001463B0 /* Assets.xcassets */,
+				F43F88CC1E72AA4E00FDEF36 /* Regex.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F44D3EC01E727D84001463B0 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				F44D3E9A1E704BF0001463B0 /* Info.plist */,
+				F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */,
+			);
+			name = Startup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +324,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44D3E911E704BF0001463B0 /* ViewController.swift in Sources */,
+				F43F88CB1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift in Sources */,
+				F43F88D11E7648FA00FDEF36 /* Instillinger.swift in Sources */,
+				F43F88CD1E72AA4E00FDEF36 /* Regex.swift in Sources */,
+				F43F88C51E729BAE00FDEF36 /* KontaktOss.swift in Sources */,
+				F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */,
+				F43F88C91E72A9F400FDEF36 /* Registrering.swift in Sources */,
 				F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */,
+				F43F88C71E72A0F500FDEF36 /* Facebook.swift in Sources */,
+				F43F88C31E729B9F00FDEF36 /* Informasjon.swift in Sources */,
+				F43F88C11E7296CA00FDEF36 /* GlemtPassord.swift in Sources */,
+				F4B4FABC1E76C11C00D76CA2 /* TestViaKode.swift in Sources */,
+				F43F88CF1E76402E00FDEF36 /* Hovedmeny.swift in Sources */,
+				F43F88BF1E7282FE00FDEF36 /* Innlogging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +581,7 @@
 				F44D3EB51E704BF0001463B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F44D3EB61E704BF0001463B0 /* Build configuration list for PBXNativeTarget "MemoFrameTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +590,7 @@
 				F44D3EB81E704BF0001463B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F44D3EB91E704BF0001463B0 /* Build configuration list for PBXNativeTarget "MemoFrameUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +599,7 @@
 				F44D3EBB1E704BF0001463B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
