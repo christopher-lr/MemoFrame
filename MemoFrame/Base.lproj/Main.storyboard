@@ -89,6 +89,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Wt2-5Z-aF7" kind="show" id="iRd-Kb-LDd"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tast inn kode her" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4y-yK-Tex">
                                 <rect key="frame" x="175" y="244" width="161" height="30"/>
@@ -973,6 +976,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="kjonnValg:" destination="R5U-cf-Tav" eventType="valueChanged" id="fxV-Cx-iV1"/>
+                                </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36F-fn-2vM">
                                 <rect key="frame" x="33" y="401" width="366" height="99"/>
@@ -984,7 +990,7 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUM-Pf-hgQ">
                                 <rect key="frame" x="131" y="209" width="274" height="21"/>
@@ -1041,6 +1047,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registrerBruker:" destination="R5U-cf-Tav" eventType="touchUpInside" id="PXl-CU-8em"/>
                                     <segue destination="pQE-MP-db7" kind="showDetail" id="4tY-U0-2Jk"/>
                                 </connections>
                             </button>
@@ -1056,10 +1063,13 @@
                     </view>
                     <connections>
                         <outlet property="epostFeilmelding" destination="kUM-Pf-hgQ" id="gFZ-7z-UVa"/>
+                        <outlet property="epostFelt" destination="GNh-vP-Nea" id="CV6-Bv-O6W"/>
                         <outlet property="fodselsaarFeilmelding" destination="9sS-oW-ilt" id="2qX-ft-DkY"/>
+                        <outlet property="fodselsaarFelt" destination="bvC-XG-a1D" id="Ro7-b9-fB7"/>
                         <outlet property="kjonn" destination="HGh-Ma-cKc" id="Wex-Rd-lUU"/>
                         <outlet property="landPicker" destination="36F-fn-2vM" id="ilh-kF-VOE"/>
                         <outlet property="passordFeilmelding" destination="REh-yr-PXT" id="8AC-dM-KhI"/>
+                        <outlet property="passordFelt" destination="etU-m5-c3o" id="z9r-K0-Yij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdq-id-dac" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1753,11 +1763,11 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o6s-NE-z2o"/>
-        <segue reference="AM6-hi-3L9"/>
+        <segue reference="FpS-yp-xWX"/>
+        <segue reference="iY4-6J-RTo"/>
         <segue reference="2Aj-zm-v0O"/>
         <segue reference="QHQ-Tr-2QG"/>
-        <segue reference="iY4-6J-RTo"/>
+        <segue reference="ZXQ-Iz-dvL"/>
         <segue reference="pHd-gR-Gkg"/>
     </inferredMetricsTieBreakers>
 </document>

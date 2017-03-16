@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import PopupDialog
+
 
 class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -18,10 +21,23 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var fodselsaarFeilmelding: UILabel!
     @IBOutlet weak var passordFeilmelding: UILabel!
     
+    @IBOutlet weak var epostFelt: UITextField!
+    
+    @IBOutlet weak var fodselsaarFelt: UITextField!
+    
+    @IBOutlet weak var passordFelt: UITextField!
+    
+    
     // Segmentkontroll og pickerview
     @IBOutlet weak var kjonn: UISegmentedControl!
+    
     @IBOutlet weak var landPicker: UIPickerView!
+    
     let pickerViewElements = ["Norge", "Sverige", "Danmark"]
+    
+    var country : String = "Norge"
+    
+    var kjonnvalgt = "Mann"
     
     override func viewDidLoad() {
         
@@ -41,8 +57,10 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         landPicker.delegate = self
         landPicker.dataSource = self
         
+
+        
     }
-    
+
     // MARK: pickerview
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -53,10 +71,48 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        country = pickerViewElements[row]
         return pickerViewElements[row]
     }
     
+    @IBAction func kjonnValg(_ sender: UISegmentedControl) {
+        if(sender.isEnabledForSegment(at: 0))
+        {
+            kjonnvalgt = "Mann"
+            }
+        else
+        {
+            kjonnvalgt = "Kvinne"
+        }
+        
+    }
     
+    @IBAction func registrerBruker(_ sender: UIButton) {
+        
+        let parameters: Parameters = [
+            "email": epostFelt.text!,
+            "passord": passordFelt.text!,
+            "land":country,
+            "alder" : fodselsaarFelt.text!,
+            "kjonn": kjonnvalgt
+        ]
+    
+        let headers: HTTPHeaders = [
+            "X-Requested-With" : "XMLHttpRequest",
+            "Accept": "application/json",
+            "X-Access-Token": "secretString"
+        ]
+
+        Alamofire.request("http://www.gruppe18.tk:8080/api/users", method: .post, parameters: parameters, headers: headers).validate().responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+        
+     }
+
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
