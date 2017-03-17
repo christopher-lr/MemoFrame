@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Alamofire
 import PopupDialog
+import JWT
+import CryptoSwift
 
 
 class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -88,7 +90,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     @IBAction func registrerBruker(_ sender: UIButton) {
-        
+     
         let parameters: Parameters = [
             "email": epostFelt.text!,
             "passord": passordFelt.text!,
@@ -96,20 +98,24 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             "alder" : fodselsaarFelt.text!,
             "kjonn": kjonnvalgt
         ]
-    
-        let headers: HTTPHeaders = [
-            "X-Requested-With" : "XMLHttpRequest",
-            "Accept": "application/json",
-            "X-Access-Token": "secretString"
-        ]
-
-        Alamofire.request("http://www.gruppe18.tk:8080/api/users", method: .post, parameters: parameters, headers: headers).validate().responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+ 
+      
+        let i: String = JWT.encode(["email": epostFelt.text!,"passord":passordFelt.text!,"land":country,"alder":fodselsaarFelt.text!,"kjonn":kjonnvalgt], algorithm: .hs256("bachelor2017".data(using: .utf8)!))
         
-     }
+        let headers : HTTPHeaders = [
+        "x-access-token":i
+        ]
+        
+        Alamofire.request("http://www.gruppe18.tk:8080/api/users",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
+    
+            if let dictionary = response.result.value as? [String: Any] {
+                if let token = dictionary["Token"] as? String {
+                    print(token)
+                    
+                   
+                }
+            }
+        }
 
     }
 
