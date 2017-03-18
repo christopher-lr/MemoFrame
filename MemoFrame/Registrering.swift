@@ -105,14 +105,15 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         let headers : HTTPHeaders = [
         "x-access-token":i
         ]
+       
+        let ii = try? JWT.decode(i, algorithm:.hs256("bachelor2017".data(using: .utf8)!))
+        print(ii)
         
         Alamofire.request("http://www.gruppe18.tk:8080/api/users",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
     
             if let dictionary = response.result.value as? [String: Any] {
                 if let token = dictionary["Token"] as? String {
                     print(token)
-                    
-                   
                 }
             }
         }
