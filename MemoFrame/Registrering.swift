@@ -100,35 +100,60 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             "alder" : fodselsaarFelt.text!,
             "kjonn": kjonnvalgt
         ]
- 
-      //det her skal også under den første if testen
-        let i: String = JWT.encode(["email": epostFelt.text!,"passord":passordFelt.text!,"land":country,"alder":fodselsaarFelt.text!,"kjonn":kjonnvalgt], algorithm: .hs256("bachelor2017".data(using: .utf8)!))
-        //og den
-        let headers : HTTPHeaders = [
-        "x-access-token":i
-        ]
-       
         
-        //så den
-        Alamofire.request("http://www.gruppe18.tk:8080/api/users",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
-           
+    //Modifisert header for brukere som vil registrerer
+         let headers : HTTPHeaders = [
+            "newUser":"newuser"
+        ]
+        //gjør kall til server for å få en token
+        Alamofire.request("http://www.gruppe18.tk:8080",headers:headers).responseJSON { response in
+   
             if let result = response.result.value {
                 let JSON = result as! NSDictionary
                 let err = JSON.object(forKey: "Error") as! Bool
-                let msg = JSON.object(forKey: "Message") as! String
-               //velykket registrering
                 if(!err){
-                //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
+                  let token = JSON.object(forKey: "Token") as! String
+                    //etter å ha fått token prøver vi å registrere en bruker
                     
-            }
-                else{
-            //blir på samme view men brukeren får opp meling fra varabelen msg
+                    let headers : HTTPHeaders = [
+                        "x-access-token": token
+                    ]
                     
+                    Alamofire.request("http://www.gruppe18.tk:8080/api/users",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
+                        
+
+                        if let result = response.result.value {
+                            let JSON = result as! NSDictionary
+                            let err = JSON.object(forKey: "Error") as! Bool
+                            let msg = JSON.object(forKey: "Message") as! String
+                            //velykket registrering
+                            if(!err){
+                                //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
+                                print(msg)
+                                
+                            }
+                            else{
+                                //blir på samme view men brukeren får opp meling fra varabelen msg
+                                if(msg.isEmpty)
+                                {
+                                    print("Registrering feilet, prøv igjen eller kontakt admin")
+                            }
+                                print(msg)
+                            }
+                        }
                     }
-            }
-            
-    //her kan else komme om ikke regex stemmer
+                }
+                    //dersom første token feiler
+                else{
+              print(response)
+             }
+      }
     }
+     
+   
+       
+        
+ 
 }
 
     override func didReceiveMemoryWarning() {
