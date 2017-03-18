@@ -91,6 +91,8 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     
     @IBAction func registrerBruker(_ sender: UIButton) {
      
+        //sett inn regex som sjekker alle verdier er riktig så legg inn parameters
+        
         let parameters: Parameters = [
             "email": epostFelt.text!,
             "passord": passordFelt.text!,
@@ -99,26 +101,35 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             "kjonn": kjonnvalgt
         ]
  
-      
+      //det her skal også under den første if testen
         let i: String = JWT.encode(["email": epostFelt.text!,"passord":passordFelt.text!,"land":country,"alder":fodselsaarFelt.text!,"kjonn":kjonnvalgt], algorithm: .hs256("bachelor2017".data(using: .utf8)!))
-        
+        //og den
         let headers : HTTPHeaders = [
         "x-access-token":i
         ]
        
-        let ii = try? JWT.decode(i, algorithm:.hs256("bachelor2017".data(using: .utf8)!))
-        print(ii)
         
+        //så den
         Alamofire.request("http://www.gruppe18.tk:8080/api/users",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
-    
-            if let dictionary = response.result.value as? [String: Any] {
-                if let token = dictionary["Token"] as? String {
-                    print(token)
-                }
+           
+            if let result = response.result.value {
+                let JSON = result as! NSDictionary
+                let err = JSON.object(forKey: "Error") as! Bool
+                let msg = JSON.object(forKey: "Message") as! String
+               //velykket registrering
+                if(!err){
+                //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
+                    
             }
-        }
-
+                else{
+            //blir på samme view men brukeren får opp meling fra varabelen msg
+                    
+                    }
+            }
+            
+    //her kan else komme om ikke regex stemmer
     }
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
