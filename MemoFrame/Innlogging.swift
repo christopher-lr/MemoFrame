@@ -25,6 +25,9 @@ class Innlogging: UIViewController {
     @IBOutlet weak var kodeKnapp: UIButton!
     @IBOutlet weak var informasjonKnapp: UIButton!
     
+    @IBOutlet weak var epost: UITextField!
+    @IBOutlet weak var passord: UITextField!
+    
     // MARK: Feilmelding
     @IBOutlet weak var feilmelding: UILabel!
     
@@ -61,6 +64,55 @@ class Innlogging: UIViewController {
                 
     }
     
+    @IBAction func logginn(_ sender: UIButton) {
+        
+        let headers : HTTPHeaders = [
+            "newUser":"newuser"
+        ]
+
+        let parameters: Parameters = [
+            "email": epost.text!,
+            "passord": passord.text!,
+        ]
+        
+        Alamofire.request("http://www.gruppe18.tk:8080",method: .post,headers:headers).validate().responseJSON { response in
+            
+            if let result = response.result.value {
+                let JSON = result as! NSDictionary
+                let err = JSON.object(forKey: "Error") as! Bool
+                if(!err){
+                    var token = JSON.object(forKey: "Token") as! String
+                    //etter å ha fått token prøver vi å logge inn bruker
+                    let headers : HTTPHeaders = [
+                        "x-access-token": token
+                    ]
+                    Alamofire.request("http://www.gruppe18.tk:8080/api/authenticate",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
+                        
+                        
+                        if let result = response.result.value {
+                            let JSON = result as! NSDictionary
+                            let err = JSON.object(forKey: "Error") as? Bool
+                            let msg = JSON.object(forKey: "Message") as! String
+                            token = JSON.object(forKey: "Token") as! String
+                            //velykket registrering
+                            if(!err!){
+                                //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.og token for å ta med videre.
+                                print(msg)
+                                
+                            }
+
+                }
+                        else{
+                            print(response)
+                  }
+            }
+        }
+    }
+            else{
+            print("Feil ved inlogging, prøv igjen eller kontakt admin")
+            }
+       }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

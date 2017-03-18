@@ -1288,7 +1288,7 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn e-post adresse her" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yui-3g-tbX">
                                 <rect key="frame" x="122" y="253" width="254" height="30"/>
@@ -1373,6 +1373,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="logginn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kcz-Yk-2nq"/>
                                     <segue destination="yjC-Xb-YPF" kind="show" id="o6s-NE-z2o"/>
                                 </connections>
                             </button>
@@ -1387,6 +1388,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="epost" destination="yui-3g-tbX" id="dAf-sz-PBW"/>
                         <outlet property="facebookIkon" destination="r3F-1t-XQQ" id="LH9-l3-nhH"/>
                         <outlet property="facebookKnapp" destination="nDw-No-azq" id="v3N-c8-eZx"/>
                         <outlet property="feilmelding" destination="qfs-gJ-tNx" id="I16-bh-hwJ"/>
@@ -1396,6 +1398,7 @@
                         <outlet property="kodeKnapp" destination="XcR-7z-ZB2" id="bTQ-fq-nQy"/>
                         <outlet property="nyBrukerIkon" destination="8FX-aB-Hha" id="Ori-IK-T5q"/>
                         <outlet property="nyBrukerKnapp" destination="os5-7h-RKX" id="1re-ya-TKn"/>
+                        <outlet property="passord" destination="ntm-TF-Gqk" id="bKd-ig-jwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1767,7 +1770,7 @@
         <segue reference="iY4-6J-RTo"/>
         <segue reference="2Aj-zm-v0O"/>
         <segue reference="QHQ-Tr-2QG"/>
-        <segue reference="ZXQ-Iz-dvL"/>
+        <segue reference="o6s-NE-z2o"/>
         <segue reference="pHd-gR-Gkg"/>
     </inferredMetricsTieBreakers>
 </document>
