@@ -137,8 +137,9 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                                 if(msg.isEmpty)
                                 {
                                     print("Registrering feilet, prøv igjen eller kontakt admin")
-                            }
+                            }else{
                                 print(msg)
+                             }
                             }
                         }
                     }
