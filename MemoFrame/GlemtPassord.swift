@@ -26,29 +26,11 @@ class GlemtPassord: UIViewController {
         feilmelding.isHidden = true
     }
     
-    func randomPass()->String
-    {
-        //passord velges fra a-zA-Z og 0-9
-        let passordFra = Array("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".characters)
-        //lengde på 8
-        let len = 8
-        //her lagres passord
-        var passord = ""
-        
-        //Random generer passord
-        for _ in 0..<len {
-            
-            let rand = arc4random_uniform(UInt32(passordFra.count))
-            // append the random character to your string
-            passord.append(passordFra[Int(rand)])
-        }
-        return passord
-    }
+ 
     @IBAction func glemtPassord(_ sender: UIButton) {
         
         let parameters: Parameters = [
-            "email": epostFelt.text!,
-            "passord": randomPass()
+            "email": epostFelt.text!
         ]
   
         //Modifisert header for brukere som vil registrerer
@@ -68,7 +50,7 @@ class GlemtPassord: UIViewController {
                     let headers : HTTPHeaders = [
                         "x-access-token": token
                     ]
-                    Alamofire.request("http://www.gruppe18.tk:8080/api/contact/pass",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
+                    Alamofire.request("http://www.gruppe18.tk:8080/api/users/reset",method: .post,parameters:parameters,headers:headers).validate().responseJSON { response in
                         
                         
                         if let result = response.result.value {
