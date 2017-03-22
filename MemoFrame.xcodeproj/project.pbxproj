@@ -28,6 +28,7 @@
 		F44D3E991E704BF0001463B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E971E704BF0001463B0 /* LaunchScreen.storyboard */; };
 		F44D3EA41E704BF0001463B0 /* MemoFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3EA31E704BF0001463B0 /* MemoFrameTests.swift */; };
 		F44D3EAF1E704BF0001463B0 /* MemoFrameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3EAE1E704BF0001463B0 /* MemoFrameUITests.swift */; };
+		F49C9F3E1E8315DB00453BCE /* Bruker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C9F3D1E8315DB00453BCE /* Bruker.swift */; };
 		F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */; };
 		F4B4FABC1E76C11C00D76CA2 /* TestViaKode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		F44D3EAA1E704BF0001463B0 /* MemoFrameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoFrameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44D3EAE1E704BF0001463B0 /* MemoFrameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFrameUITests.swift; sourceTree = "<group>"; };
 		F44D3EB01E704BF0001463B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49C9F3D1E8315DB00453BCE /* Bruker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bruker.swift; sourceTree = "<group>"; };
 		F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brukerdetaljer.swift; sourceTree = "<group>"; };
 		F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViaKode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 			children = (
 				F44D3E951E704BF0001463B0 /* Assets.xcassets */,
 				F43F88CC1E72AA4E00FDEF36 /* Regex.swift */,
+				F49C9F3D1E8315DB00453BCE /* Bruker.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				F43F88D11E7648FA00FDEF36 /* Instillinger.swift in Sources */,
 				F43F88CD1E72AA4E00FDEF36 /* Regex.swift in Sources */,
 				F43F88C51E729BAE00FDEF36 /* KontaktOss.swift in Sources */,
+				F49C9F3E1E8315DB00453BCE /* Bruker.swift in Sources */,
 				F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */,
 				F43F88C91E72A9F400FDEF36 /* Registrering.swift in Sources */,
 				F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */,

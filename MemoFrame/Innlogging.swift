@@ -110,6 +110,8 @@ class Innlogging: UIViewController {
     }
             else{
             print("Feil ved inlogging, prøv igjen eller kontakt admin")
+                
+                // Hvis feil ved innlogging vis "feilmelding" = true
             }
        }
     }

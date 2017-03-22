@@ -24,9 +24,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var passordFeilmelding: UILabel!
     
     @IBOutlet weak var epostFelt: UITextField!
-    
     @IBOutlet weak var fodselsaarFelt: UITextField!
-    
     @IBOutlet weak var passordFelt: UITextField!
     
     
@@ -90,8 +88,30 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     @IBAction func registrerBruker(_ sender: UIButton) {
-     
-        //sett inn regex som sjekker alle verdier er riktig så legg inn parameters
+            
+        // verifikasjon med Regex
+        let regex = Regex()
+        var gyldig: Bool = false
+            
+        let epostInput: String = epostFelt.text!
+        let fodselsaarInput: String = fodselsaarFelt.text!
+        let passordInput: String = passordFelt.text!
+            
+        if (regex.verifiserEpost(tekst: epostInput) && regex.verifiserAlder(tekst: fodselsaarInput) && regex.verifiserPassord(tekst: passordInput)) {
+            
+            
+        /* her utføres registrering mot server?
+           Kan også gjøres med en gyldig variabel, if gyldig = true; */
+            
+                print("Alt er riktig")
+                gyldig = true
+            
+                
+        } else {
+                
+                print("Alt er feil")
+        }
+
         
         let parameters: Parameters = [
             "email": epostFelt.text!,
@@ -151,10 +171,6 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
       }
     }
      
-   
-       
-        
- 
 }
 
     override func didReceiveMemoryWarning() {
