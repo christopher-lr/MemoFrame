@@ -93,17 +93,20 @@ class Innlogging: UIViewController {
                             let JSON = result as! NSDictionary
                             let err = JSON.object(forKey: "Error") as? Bool
                             let msg = JSON.object(forKey: "Message") as! String
-                            token = JSON.object(forKey: "Token") as! String
+                            
                             //velykket registrering
                             if(!err!){
+                                token = JSON.object(forKey: "Token") as! String
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.og token for å ta med videre.
                                 print(msg)
                                 
                             }
-
+                            else{
+                                print(response.result.value)
+                            }
                 }
                         else{
-                            print(response)
+                            print(response.result.value)
                   }
             }
         }
