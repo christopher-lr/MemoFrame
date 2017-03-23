@@ -281,9 +281,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="9Wn-rt-lNG"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqo-5D-GwQ">
                                 <rect key="frame" x="5" y="3" width="59" height="30"/>
@@ -516,6 +513,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f0S-fP-jL0"/>
                     <connections>
                         <outlet property="brukerIkon" destination="xPT-Fe-I4G" id="BGf-kV-qfn"/>
                         <outlet property="brukerKnapp" destination="a1w-6K-sXR" id="fAz-8t-gRO"/>
@@ -1381,7 +1379,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logginn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kcz-Yk-2nq"/>
-                                    <segue destination="yjC-Xb-YPF" kind="show" id="o6s-NE-z2o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-No-azq">
@@ -1406,6 +1403,7 @@
                         <outlet property="nyBrukerIkon" destination="8FX-aB-Hha" id="Ori-IK-T5q"/>
                         <outlet property="nyBrukerKnapp" destination="os5-7h-RKX" id="1re-ya-TKn"/>
                         <outlet property="passord" destination="ntm-TF-Gqk" id="bKd-ig-jwp"/>
+                        <segue destination="yjC-Xb-YPF" kind="show" identifier="Innlogget" id="y08-1v-3c0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1743,9 +1741,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="yjC-Xb-YPF" kind="show" id="ZXQ-Iz-dvL"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6J-L3-Bt1">
                                 <rect key="frame" x="106" y="380" width="297" height="21"/>
@@ -1783,11 +1778,11 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZXQ-Iz-dvL"/>
+        <segue reference="a26-p7-uQS"/>
+        <segue reference="y08-1v-3c0"/>
+        <segue reference="Y6v-d1-Moc"/>
         <segue reference="iY4-6J-RTo"/>
-        <segue reference="zna-ct-dVt"/>
         <segue reference="QHQ-Tr-2QG"/>
         <segue reference="2Aj-zm-v0O"/>
-        <segue reference="pHd-gR-Gkg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -120,10 +120,10 @@ class Innlogging: UIViewController {
                             if(!err!){
                                 token = JSON.object(forKey: "Token") as! String
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.og token for å ta med videre.
-                                self.performSegue(withIdentifier: "segueHovedmeny", sender: token)
+                               var array = ["Token":token,"Email":self.epost.text!]
                                
-                                print(msg)
-                                
+                               self.performSegue(withIdentifier: "Innlogget", sender: array)
+         
                             }
                             else{
                                 print(response.result.value)
@@ -148,14 +148,14 @@ class Innlogging: UIViewController {
     }
     
     // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "segueHovedmeny" {
+        if segue.identifier == "Innlogget" {
             
             if let destination = segue.destination as? Hovedmeny {
                 
                 // må være samme type som det variabelen som skal ta imot i det andre viewet
-                destination.token = sender as? String
+                destination.info = sender as? [String]
             }
         }
     }

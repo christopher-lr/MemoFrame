@@ -164,7 +164,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                                 
                                 // test at det fungerer med å sende en string
                                 
-                                    let epostTekst = self.epostFelt.text
+                                let epostTekst = self.epostFelt.text
                                 
                                 self.performSegue(withIdentifier: "segueRegistreringTilbakemelding", sender: epostTekst)
                                 
