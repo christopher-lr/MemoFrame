@@ -91,27 +91,36 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             
         // verifikasjon med Regex
         let regex = Regex()
-        var gyldig: Bool = false
-            
-        let epostInput: String = epostFelt.text!
-        let fodselsaarInput: String = fodselsaarFelt.text!
-        let passordInput: String = passordFelt.text!
-            
-        if (regex.verifiserEpost(tekst: epostInput) && regex.verifiserAlder(tekst: fodselsaarInput) && regex.verifiserPassord(tekst: passordInput)) {
-            
-            
-        /* her utføres registrering mot server?
-           Kan også gjøres med en gyldig variabel, if gyldig = true; */
-            
-                print("Alt er riktig")
-                gyldig = true
-            
-                
+        var gyldigEpost: Bool = false
+        var gyldigFodselsaar: Bool = false
+        var gyldigPassord: Bool = false
+        var gyldigAlt: Bool = false
+        
+        if (regex.verifiserEpost(tekst: epostFelt.text!)) {
+            gyldigEpost = true
         } else {
-                
-                print("Alt er feil")
+            epostFeilmelding.isHidden = false
         }
+        
+        if (regex.verifiserFodselsaar(tekst: fodselsaarFelt.text!)) {
+            gyldigFodselsaar = true
+        } else {
+            fodselsaarFeilmelding.isHidden = false
+        }
+        
+        if (regex.verifiserPassord(tekst: passordFelt.text!)) {
+            gyldigPassord = true
+        } else {
+            passordFeilmelding.isHidden = false
+        }
+        
+        if (gyldigEpost && gyldigFodselsaar && gyldigPassord) {
+            gyldigAlt = true
+        }
+        
 
+        
+        if (gyldigAlt) {
         
         let parameters: Parameters = [
             "email": epostFelt.text!,
@@ -121,7 +130,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             "kjonn": kjonnvalgt
         ]
         
-    //Modifisert header for brukere som vil registrerer
+        //Modifisert header for brukere som vil registrerer
          let headers : HTTPHeaders = [
             "newUser":"newuser"
         ]
@@ -149,6 +158,16 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                             //velykket registrering
                             if(!err){
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
+                                
+                                
+                                // let testbruker = Bruker() <-- Brukerobjekt skal være sender?
+                                
+                                // test at det fungerer med å sende en string
+                                
+                                    let epostTekst = self.epostFelt.text
+                                
+                                self.performSegue(withIdentifier: "segueRegistreringTilbakemelding", sender: epostTekst)
+                                
                                 print(msg)
                                 
                             }
@@ -168,10 +187,27 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                 else{
               print(response)
              }
+            } // <-- Slutt av if statement? trenger å gjøre mer ryddig
       }
     }
      
 }
+    
+    
+    // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueRegistreringTilbakemelding" {
+            
+            if let destination = segue.destination as? RegistreringTilbakemelding {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.passedData = sender as? String
+            }
+        }
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
