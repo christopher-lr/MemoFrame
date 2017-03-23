@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1048,7 +1049,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registrerBruker:" destination="R5U-cf-Tav" eventType="touchUpInside" id="PXl-CU-8em"/>
-                                    <segue destination="pQE-MP-db7" kind="showDetail" id="4tY-U0-2Jk"/>
+                                    <segue destination="pQE-MP-db7" kind="showDetail" identifier="segueRegistreringTilbakemelding" id="4tY-U0-2Jk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fødselsår:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-mv-LcF">
@@ -1076,10 +1077,10 @@
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="139.4021739130435"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrering Tilbakemelding-->
         <scene sceneID="7Uh-Xh-WRM">
             <objects>
-                <viewController id="pQE-MP-db7" sceneMemberID="viewController">
+                <viewController id="pQE-MP-db7" customClass="RegistreringTilbakemelding" customModule="MemoFrame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xwg-Qa-6mz"/>
                         <viewControllerLayoutGuide type="bottom" id="FWu-Ib-l56"/>
@@ -1203,6 +1204,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="epostTilbakemelding" destination="O0d-Zs-ye3" id="Zaf-Fw-x3C"/>
+                        <outlet property="fodselsaar" destination="tVR-f3-APV" id="xcU-vn-ADc"/>
+                        <outlet property="kjonn" destination="hBx-BK-100" id="6Fy-Bb-PLR"/>
+                        <outlet property="land" destination="BXQ-gZ-7QN" id="FkZ-Hi-UcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pB-Xy-88S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1241,13 +1248,6 @@
                                     <segue destination="R5U-cf-Tav" kind="show" id="NiH-Ue-HGY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-No-azq">
-                                <rect key="frame" x="234" y="438" width="134" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="8ox-yM-d0p" kind="show" id="iY4-6J-RTo"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xf-wt-tc5">
                                 <rect key="frame" x="268" y="579" width="66" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1283,7 +1283,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn passord her" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ntm-TF-Gqk">
-                                <rect key="frame" x="122" y="299" width="254" height="30"/>
+                                <rect key="frame" x="116" y="298" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -1291,7 +1291,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn e-post adresse her" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yui-3g-tbX">
-                                <rect key="frame" x="122" y="253" width="254" height="30"/>
+                                <rect key="frame" x="117" y="252" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -1299,19 +1299,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQd-zb-6Z5">
-                                <rect key="frame" x="118" y="39" width="189" height="30"/>
+                                <rect key="frame" x="77" y="35" width="274" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Trykk her for å prøve demo!"/>
                                 <connections>
                                     <segue destination="fQZ-zY-2p2" kind="show" id="zXW-0M-k4o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xz2-DC-2uN">
-                                <rect key="frame" x="314" y="702" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Kontakt oss"/>
-                                <connections>
-                                    <segue destination="XuL-Vg-QgC" kind="show" id="2Aj-zm-v0O"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FX-aB-Hha">
@@ -1347,7 +1339,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-gJ-tNx">
-                                <rect key="frame" x="122" y="330" width="274" height="21"/>
+                                <rect key="frame" x="122" y="330" width="596" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="*Vennligst tast inn gyldig bruker og passord">
@@ -1360,8 +1352,23 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Logo]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj7-zY-luc">
+                                <rect key="frame" x="186" y="120" width="53" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xz2-DC-2uN">
+                                <rect key="frame" x="320" y="702" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Kontakt oss"/>
+                                <connections>
+                                    <segue destination="XuL-Vg-QgC" kind="show" id="2Aj-zm-v0O"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFd-gf-bD2">
-                                <rect key="frame" x="129" y="361" width="174" height="56"/>
+                                <rect key="frame" x="90" y="368" width="251" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77378325670000003" green="0.77378325670000003" blue="0.77378325670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1377,13 +1384,13 @@
                                     <segue destination="yjC-Xb-YPF" kind="show" id="o6s-NE-z2o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Logo]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj7-zY-luc">
-                                <rect key="frame" x="197" y="140" width="50" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-No-azq">
+                                <rect key="frame" x="236" y="438" width="134" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <segue destination="8ox-yM-d0p" kind="show" id="iY4-6J-RTo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1667,9 +1674,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml3-dk-YnF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml3-dk-YnF">
                                 <rect key="frame" x="89" y="93" width="245" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="pzF-7I-gU0"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Innlogging via facebook">
                                         <attributes>
@@ -1754,6 +1763,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ml3-dk-YnF" firstAttribute="leading" secondItem="D85-Z6-oHk" secondAttribute="leadingMargin" constant="69" id="lTQ-Wr-fCh"/>
+                            <constraint firstItem="ml3-dk-YnF" firstAttribute="top" secondItem="ORG-Sl-G4F" secondAttribute="bottom" constant="73" id="rOK-Hh-LLT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="facebookIkon" destination="7Rj-nW-QmA" id="WIg-0M-OSh"/>
@@ -1770,11 +1783,11 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XYf-H3-Th2"/>
+        <segue reference="ZXQ-Iz-dvL"/>
         <segue reference="iY4-6J-RTo"/>
-        <segue reference="2Aj-zm-v0O"/>
+        <segue reference="zna-ct-dVt"/>
         <segue reference="QHQ-Tr-2QG"/>
-        <segue reference="o6s-NE-z2o"/>
+        <segue reference="2Aj-zm-v0O"/>
         <segue reference="pHd-gR-Gkg"/>
     </inferredMetricsTieBreakers>
 </document>
