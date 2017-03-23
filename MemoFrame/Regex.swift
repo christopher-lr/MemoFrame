@@ -37,6 +37,7 @@ class Regex {
         let perDagsDato = Int(formatter.string(from: dato))
         let datoFraTekst = Int(tekst)
         
+        if(datoFraTekst != nil){
         if (datoFraTekst! < 1850 || datoFraTekst! > perDagsDato!) {
             
             return false
@@ -44,8 +45,9 @@ class Regex {
         } else {
             
             return true
+         }
         }
-        
+        return false
     }
     
     //Store og små bokstaver samt tall er kun det som er gyldig

@@ -23,6 +23,8 @@ class Hovedmeny: UIViewController {
     @IBOutlet weak var brukerKnapp: UIButton!
     @IBOutlet weak var instillingerKnapp: UIButton!
     
+    var token : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

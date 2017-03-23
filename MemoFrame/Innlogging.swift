@@ -66,14 +66,36 @@ class Innlogging: UIViewController {
     
     @IBAction func logginn(_ sender: UIButton) {
         
+        // verifikasjon med Regex
+        let regex = Regex()
+        var gyldigEpost: Bool = false
+        var gyldigPassord: Bool = false
+        var gyldigAlt: Bool = false
+
+        
+        if (regex.verifiserEpost(tekst: epost.text!)) {
+            gyldigEpost = true
+        } else {
+            feilmelding.isHidden = false
+        }
+        if (regex.verifiserPassord(tekst: passord.text!)) {
+            gyldigPassord = true
+        } else {
+            feilmelding.isHidden = false
+        }
+        if (gyldigEpost && gyldigPassord) {
+            gyldigAlt = true
+        }
+
+       if (gyldigAlt) {
         let headers : HTTPHeaders = [
             "newUser":"newuser"
         ]
-
+        
         let parameters: Parameters = [
             "email": epost.text!,
             "passord": passord.text!,
-        ]
+            ]
         
         Alamofire.request("http://www.gruppe18.tk:8080",method: .post,headers:headers).validate().responseJSON { response in
             
@@ -98,25 +120,44 @@ class Innlogging: UIViewController {
                             if(!err!){
                                 token = JSON.object(forKey: "Token") as! String
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.og token for å ta med videre.
+                                self.performSegue(withIdentifier: "segueHovedmeny", sender: token)
+                               
                                 print(msg)
                                 
                             }
                             else{
                                 print(response.result.value)
                             }
-                }
+                            
+                        }
                         else{
                             print(response.result.value)
-                  }
+                        }
+                    }
+                }
+                
             }
-        }
-    }
             else{
-            print("Feil ved inlogging, prøv igjen eller kontakt admin")
+                print("Feil ved inlogging, prøv igjen eller kontakt admin")
                 
                 // Hvis feil ved innlogging vis "feilmelding" = true
             }
-       }
+        }
+        
+        }
+    }
+    
+    // forbereder data til å bli flyttet fra denne viewen tl en annen via en segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "segueHovedmeny" {
+            
+            if let destination = segue.destination as? Hovedmeny {
+                
+                // må være samme type som det variabelen som skal ta imot i det andre viewet
+                destination.token = sender as? String
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
