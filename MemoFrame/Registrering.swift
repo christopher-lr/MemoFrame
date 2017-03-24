@@ -114,7 +114,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             passordFeilmelding.isHidden = false
         }
         
-        if (gyldigEpost && gyldigFodselsaar && gyldigPassord) {
+        if (gyldigEpost && gyldigFodselsaar && gyldigPassord && country != nil ) {
             gyldigAlt = true
         }
         
@@ -164,11 +164,16 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                                 
                                 // test at det fungerer med å sende en string
                                 
-                                let epostTekst = self.epostFelt.text
-                                
-                                self.performSegue(withIdentifier: "segueRegistreringTilbakemelding", sender: epostTekst)
-                                
+                                let array:[String:String] = [
+                                                "email": self.epostFelt.text!,
+                                                "passord": self.passordFelt.text!,
+                                                "land":self.country,
+                                                "alder" : self.fodselsaarFelt.text!,
+                                                "kjonn": self.kjonnvalgt]
                                 print(msg)
+                                self.performSegue(withIdentifier: "segueRegistreringTilbakemelding", sender: array)
+                                
+                               
                                 
                             }
                             else{
@@ -177,6 +182,9 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                                 {
                                     print("Registrering feilet, prøv igjen eller kontakt admin")
                             }else{
+                                    let alert = UIAlertController(title: "Melding", message: "Brukeren finnes, har du glemt passordet ?", preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+                                    self.present(alert, animated: true, completion: nil)
                                 print(msg)
                              }
                             }
@@ -202,7 +210,7 @@ class Registrering: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             if let destination = segue.destination as? RegistreringTilbakemelding {
                 
                 // må være samme type som det variabelen som skal ta imot i det andre viewet
-                destination.passedData = sender as? String
+                destination.passedData = (sender as? [String : String])!
             }
         }
     }

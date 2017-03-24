@@ -1047,7 +1047,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registrerBruker:" destination="R5U-cf-Tav" eventType="touchUpInside" id="PXl-CU-8em"/>
-                                    <segue destination="pQE-MP-db7" kind="showDetail" identifier="segueRegistreringTilbakemelding" id="4tY-U0-2Jk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fødselsår:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-mv-LcF">
@@ -1069,6 +1068,7 @@
                         <outlet property="landPicker" destination="36F-fn-2vM" id="ilh-kF-VOE"/>
                         <outlet property="passordFeilmelding" destination="REh-yr-PXT" id="8AC-dM-KhI"/>
                         <outlet property="passordFelt" destination="etU-m5-c3o" id="z9r-K0-Yij"/>
+                        <segue destination="pQE-MP-db7" kind="show" identifier="segueRegistreringTilbakemelding" id="tHT-f5-3kB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdq-id-dac" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1144,7 +1144,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ePost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-Zs-ye3">
-                                <rect key="frame" x="127" y="175" width="50" height="21"/>
+                                <rect key="frame" x="127" y="175" width="267" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1158,14 +1158,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjønn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBx-BK-100">
-                                <rect key="frame" x="125" y="256" width="50" height="21"/>
+                                <rect key="frame" x="125" y="256" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="land" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-gZ-7QN">
-                                <rect key="frame" x="125" y="294" width="50" height="21"/>
+                                <rect key="frame" x="125" y="294" width="154" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1191,9 +1191,12 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendInfo:" destination="pQE-MP-db7" eventType="touchUpInside" id="pgN-uY-ZOT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="passord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-f7-epE">
-                                <rect key="frame" x="123" y="335" width="62" height="21"/>
+                                <rect key="frame" x="123" y="335" width="271" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1207,11 +1210,13 @@
                         <outlet property="fodselsaar" destination="tVR-f3-APV" id="xcU-vn-ADc"/>
                         <outlet property="kjonn" destination="hBx-BK-100" id="6Fy-Bb-PLR"/>
                         <outlet property="land" destination="BXQ-gZ-7QN" id="FkZ-Hi-UcG"/>
+                        <outlet property="passord" destination="PFe-f7-epE" id="sZq-29-j3X"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ok" id="nJp-6M-A6F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pB-Xy-88S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="140"/>
+            <point key="canvasLocation" x="1692.753623188406" y="139.4021739130435"/>
         </scene>
         <!--Innlogging-->
         <scene sceneID="tne-QT-ifu">
@@ -1778,11 +1783,11 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a26-p7-uQS"/>
-        <segue reference="y08-1v-3c0"/>
-        <segue reference="Y6v-d1-Moc"/>
+        <segue reference="nJp-6M-A6F"/>
         <segue reference="iY4-6J-RTo"/>
         <segue reference="QHQ-Tr-2QG"/>
+        <segue reference="y08-1v-3c0"/>
         <segue reference="2Aj-zm-v0O"/>
+        <segue reference="Y6v-d1-Moc"/>
     </inferredMetricsTieBreakers>
 </document>
