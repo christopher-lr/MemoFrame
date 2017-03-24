@@ -29,6 +29,10 @@ class GlemtPassord: UIViewController {
  
     @IBAction func glemtPassord(_ sender: UIButton) {
         
+        var regex = Regex();
+        
+        if (regex.verifiserEpost(tekst: epostFelt.text!) && epostFelt != nil) {
+            
         let parameters: Parameters = [
             "email": epostFelt.text!
         ]
@@ -39,6 +43,10 @@ class GlemtPassord: UIViewController {
         ]
         Alamofire.request("http://www.gruppe18.tk:8080",headers:headers).responseJSON { response in
 
+            let parameters: Parameters = [
+                "email": self.epostFelt.text!
+                ]
+            
             if let result = response.result.value {
                 let JSON = result as! NSDictionary
                 let err = JSON.object(forKey: "Error") as! Bool
@@ -59,25 +67,59 @@ class GlemtPassord: UIViewController {
                             let msg = JSON.object(forKey: "Message") as! String
                             if(!err){
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
-                                print(msg)
+                                let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+                                self.present(alert, animated: true, completion: nil)
+                                
                                 
                             }
                              else{
-                            print(msg)
+                                let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                                
+                                self.present(alert, animated: true, completion: nil)
+                                
+                               alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:  { action in
+                                    switch action.style{
+                                    case .default:
+                                        self.dismiss(animated: true, completion: nil)
+                                        
+                                    case .cancel:
+                                        print("cancel")
+                                        
+                                    case .destructive:
+                                        print("destructive")
+                                    }
+                                }))
+                                print(msg)
 
                             }
                         }
                         else{
                             //Dersom noe gikk galt ved autentisering av token eller ved å få ny passord
-                            print(response.result)
+                            let alert = UIAlertController(title: "Melding", message: "Feil ved å motta token,prøv igjen eller kontakt support.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+                           
+                           
                         }
                 }
             }
             else{
-                print("Feil oppstod,prøv igjen eller kontakt admin")
+                    let alert = UIAlertController(title: "Melding", message: "Feil oppstod,prøv igjen eller kontakt admin", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+                  
+                    
+                
             }
         }
       }
+    }
+            //dersom feil tastet email feiler
+        else{
+            
+           feilmelding.isHidden = false
+        }
+  
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

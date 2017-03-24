@@ -1642,7 +1642,7 @@
                                 <rect key="frame" x="81" y="418" width="278" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="*Denne brukeren er ikke registrert i systemet">
+                                    <fragment content="*Skriv inn riktig epost aderesse.">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="12" name="Verdana-Italic"/>
@@ -1783,11 +1783,11 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nJp-6M-A6F"/>
+        <segue reference="XYf-H3-Th2"/>
+        <segue reference="2Aj-zm-v0O"/>
         <segue reference="iY4-6J-RTo"/>
         <segue reference="QHQ-Tr-2QG"/>
         <segue reference="y08-1v-3c0"/>
-        <segue reference="2Aj-zm-v0O"/>
         <segue reference="Y6v-d1-Moc"/>
     </inferredMetricsTieBreakers>
 </document>
