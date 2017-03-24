@@ -68,17 +68,10 @@ class GlemtPassord: UIViewController {
                             if(!err){
                                 //her skal man kunne gå til et annet view, kan bruke msg for å gi brukern melding om at bruker er lagt til.
                                 let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
-                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
-                                self.present(alert, animated: true, completion: nil)
-                                
-                                
-                            }
-                             else{
-                                let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
                                 
                                 self.present(alert, animated: true, completion: nil)
                                 
-                               alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:  { action in
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:  { action in
                                     switch action.style{
                                     case .default:
                                         self.dismiss(animated: true, completion: nil)
@@ -91,6 +84,13 @@ class GlemtPassord: UIViewController {
                                     }
                                 }))
                                 print(msg)
+                            }
+                             else{
+                                let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                                           alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:nil))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                        
 
                             }
                         }
@@ -98,7 +98,8 @@ class GlemtPassord: UIViewController {
                             //Dersom noe gikk galt ved autentisering av token eller ved å få ny passord
                             let alert = UIAlertController(title: "Melding", message: "Feil ved å motta token,prøv igjen eller kontakt support.", preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
+                            self.present(alert, animated: true, completion: nil)
+                            
                            
                            
                         }

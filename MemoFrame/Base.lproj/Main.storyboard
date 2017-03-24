@@ -1533,6 +1533,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendTilbakemelding:" destination="XuL-Vg-QgC" eventType="touchUpInside" id="BYc-Xh-HZJ"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Skriv inn din kommentar" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vai-qh-XIu">
                                 <rect key="frame" x="129" y="357" width="252" height="159"/>
@@ -1561,6 +1564,8 @@
                     </view>
                     <connections>
                         <outlet property="beskrivelse" destination="f8r-8K-c7Q" id="gDy-Jf-ydw"/>
+                        <outlet property="epostFelt" destination="r04-1M-fab" id="FoK-BG-qFT"/>
+                        <outlet property="tilbakemelding" destination="vai-qh-XIu" id="7RT-t9-bYG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6c-hQ-Pz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1783,8 +1788,8 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XYf-H3-Th2"/>
-        <segue reference="2Aj-zm-v0O"/>
+        <segue reference="AM6-hi-3L9"/>
+        <segue reference="fud-gp-DFi"/>
         <segue reference="iY4-6J-RTo"/>
         <segue reference="QHQ-Tr-2QG"/>
         <segue reference="y08-1v-3c0"/>
