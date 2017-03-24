@@ -126,7 +126,10 @@ class Innlogging: UIViewController {
          
                             }
                             else{
-                                print(response.result.value)
+                                let alert = UIAlertController(title: "Melding", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+
                             }
                             
                         }
