@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import Alamofire
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class Innlogging: UIViewController {
     
@@ -28,12 +30,24 @@ class Innlogging: UIViewController {
     @IBOutlet weak var epost: UITextField!
     @IBOutlet weak var passord: UITextField!
     
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
+    
     // MARK: Feilmelding
     @IBOutlet weak var feilmelding: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var loginButton = FBSDKLoginButton()
+       // view.addSubview(loginButton)
+        
+        if (FBSDKAccessToken.current() != nil) {
+            // User is logged in, do work such as go to next view controller.
+            loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        }
+        else {
+            // User is logged in, do work such as go to next view controller.
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         
         // setter feilmelding til false
         feilmelding.isHidden = true
@@ -61,7 +75,7 @@ class Innlogging: UIViewController {
         informasjonKnapp.layer.borderWidth = 2
         informasjonKnapp.layer.borderColor = UIColor.init(red: 67/255, green: 190/255, blue: 204/255, alpha: 0.75).cgColor
         
-                
+       }         
     }
     
     @IBAction func logginn(_ sender: UIButton) {

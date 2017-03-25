@@ -1221,7 +1221,7 @@
         <!--Innlogging-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Innlogging" customModule="MemoFrame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Innlogging" customModule="MemoFrame" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -1386,12 +1386,9 @@
                                     <action selector="logginn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kcz-Yk-2nq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-No-azq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-No-azq" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="236" y="438" width="134" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="8ox-yM-d0p" kind="show" id="iY4-6J-RTo"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1788,11 +1785,10 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AM6-hi-3L9"/>
-        <segue reference="fud-gp-DFi"/>
-        <segue reference="iY4-6J-RTo"/>
-        <segue reference="QHQ-Tr-2QG"/>
-        <segue reference="y08-1v-3c0"/>
         <segue reference="Y6v-d1-Moc"/>
+        <segue reference="y08-1v-3c0"/>
+        <segue reference="zna-ct-dVt"/>
+        <segue reference="QHQ-Tr-2QG"/>
+        <segue reference="2Aj-zm-v0O"/>
     </inferredMetricsTieBreakers>
 </document>
