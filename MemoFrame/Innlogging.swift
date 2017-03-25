@@ -30,24 +30,24 @@ class Innlogging: UIViewController {
     @IBOutlet weak var epost: UITextField!
     @IBOutlet weak var passord: UITextField!
     
-    @IBOutlet weak var loginButton: FBSDKLoginButton!
+   // @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     // MARK: Feilmelding
     @IBOutlet weak var feilmelding: UILabel!
     
+    var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+    var fbresult: Any?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var loginButton = FBSDKLoginButton()
+        //var loginButton = FBSDKLoginButton()
        // view.addSubview(loginButton)
-        
-        if (FBSDKAccessToken.current() != nil) {
+      
+
+            
             // User is logged in, do work such as go to next view controller.
-            loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        }
-        else {
-            // User is logged in, do work such as go to next view controller.
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        //loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         
         // setter feilmelding til false
         feilmelding.isHidden = true
@@ -75,7 +75,7 @@ class Innlogging: UIViewController {
         informasjonKnapp.layer.borderWidth = 2
         informasjonKnapp.layer.borderColor = UIColor.init(red: 67/255, green: 190/255, blue: 204/255, alpha: 0.75).cgColor
         
-       }         
+        
     }
     
     @IBAction func logginn(_ sender: UIButton) {
@@ -175,8 +175,36 @@ class Innlogging: UIViewController {
                 destination.info = sender as? [String]
             }
         }
+        
+    }
+
+    @IBAction func fbKnapp(_ sender: AnyObject) {
+        
+        fbLoginManager .logIn(withReadPermissions: ["email"], handler: { (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    self.getFBUserData()
+                    var array = ["Token":FBSDKAccessToken.current().tokenString,"Result":self.fbresult]
+                    self.performSegue(withIdentifier: "Innlogget", sender: array)
+                   // fbLoginManager.logOut()
+                }
+            }
+        })
     }
     
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    self.fbresult = result
+                    print(result)
+                }
+            })
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
