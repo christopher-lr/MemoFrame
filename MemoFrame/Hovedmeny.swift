@@ -25,6 +25,7 @@ class Hovedmeny: UIViewController {
     @IBOutlet weak var instillingerKnapp: UIButton!
     
     var info : [String]!
+    var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,11 @@ class Hovedmeny: UIViewController {
         instillingerKnapp.layer.borderWidth = 2
         instillingerKnapp.layer.borderColor = UIColor.init(red: 52/255, green: 73/255, blue: 94/255, alpha: 0.75).cgColor
  
+    }
+    
+    @IBAction func loggut(_ sender: UIButton) {
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

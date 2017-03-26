@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class Instillinger: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -22,6 +23,7 @@ class Instillinger: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var fargeblindStotte: UISegmentedControl!
     @IBOutlet weak var lydStotte: UISegmentedControl!
     
+    @IBOutlet weak var lydJustering: UISlider!
     // Beskrivelse
     @IBOutlet weak var beskrivelse: UILabel!
     
@@ -48,12 +50,14 @@ class Instillinger: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         
         lydAktivertKnapp.isHidden = true
         lydDeaktivertKnapp.isHidden = false
+        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0, animated: false)
     }
     
     @IBAction func aktiver(_ sender: Any) {
         
         lydAktivertKnapp.isHidden = false
         lydDeaktivertKnapp.isHidden = true
+        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(lydJustering.value, animated: false)
     }
     
     // MARK: PickerView
@@ -82,6 +86,9 @@ class Instillinger: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     }
 
     
+    @IBAction func justerLyd(_ sender: Any) {
+        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(lydJustering.value, animated: false)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

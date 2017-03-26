@@ -456,7 +456,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="a26-p7-uQS"/>
+                                    <action selector="loggut:" destination="yjC-Xb-YPF" eventType="touchUpInside" id="d2P-os-3Qt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ta tester" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znm-JG-DGN">
@@ -523,6 +523,7 @@
                         <outlet property="testerKnapp" destination="Az0-5z-AR0" id="h6m-zF-TpN"/>
                         <outlet property="testresultaterIkon" destination="fS4-Gu-VPG" id="mrf-AH-h44"/>
                         <outlet property="testresultaterKnapp" destination="C4t-pf-Ly5" id="c4R-GM-R0n"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loggut" id="NYy-aq-fEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAW-tf-NIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,10 +593,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-0x-YIA">
-                                <rect key="frame" x="130" y="161" width="180" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-JD-zDf">
                                 <rect key="frame" x="29" y="201" width="372" height="99"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -669,6 +666,13 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dgf-0x-YIA">
+                                <rect key="frame" x="31" y="163" width="276" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="justerLyd:" destination="j8j-rm-yzY" eventType="valueChanged" id="x1t-nK-RFE"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -677,6 +681,7 @@
                         <outlet property="fargeblindStotte" destination="Tgm-hg-5fR" id="wEl-jz-Al6"/>
                         <outlet property="lydAktivertKnapp" destination="Vwz-zQ-a3f" id="hK9-3M-LsC"/>
                         <outlet property="lydDeaktivertKnapp" destination="byN-C7-BdD" id="jbN-Qs-fJG"/>
+                        <outlet property="lydJustering" destination="Dgf-0x-YIA" id="YkC-Qu-VBs"/>
                         <outlet property="lydStotte" destination="IDf-rj-5qh" id="9vr-Fl-7Ki"/>
                         <outlet property="spraakPicker" destination="DTh-JD-zDf" id="kZT-9R-RyP"/>
                     </connections>
@@ -1788,9 +1793,9 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PzX-BG-8ai"/>
+        <segue reference="QYR-Oh-Vhm"/>
         <segue reference="Y6v-d1-Moc"/>
-        <segue reference="y08-1v-3c0"/>
-        <segue reference="bT7-KH-Jat"/>
         <segue reference="2Aj-zm-v0O"/>
         <segue reference="QHQ-Tr-2QG"/>
     </inferredMetricsTieBreakers>
