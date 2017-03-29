@@ -778,6 +778,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="endre:" destination="hRC-F6-3rZ" eventType="touchUpInside" id="01W-fG-pzp"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn e-post adresse" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEm-1n-p3y">
                                 <rect key="frame" x="139" y="138" width="254" height="30"/>
@@ -801,7 +804,7 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skriv inn ønsket passord på nytt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XvB-oY-NxA">
                                 <rect key="frame" x="140" y="337" width="254" height="30"/>
@@ -809,7 +812,7 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQI-Lt-nUb">
                                 <rect key="frame" x="138" y="109" width="274" height="21"/>
@@ -880,6 +883,10 @@
                     </view>
                     <connections>
                         <outlet property="emailFeilmelding" destination="uQI-Lt-nUb" id="dqg-fI-2ou"/>
+                        <outlet property="epostFelten" destination="XEm-1n-p3y" id="Rxm-M0-tXm"/>
+                        <outlet property="epostFeltto" destination="OQW-ZY-wZ4" id="wiq-4b-IAq"/>
+                        <outlet property="gammelPassord" destination="1lE-05-aJy" id="UhX-nr-FlE"/>
+                        <outlet property="nyPassord" destination="XvB-oY-NxA" id="K5y-hc-ZSt"/>
                         <outlet property="passordFeilmelding" destination="NLv-L2-G5T" id="AXH-lt-3W2"/>
                         <outlet property="repeterEmailFeilmelding" destination="rQa-c1-Nyz" id="A3D-nb-2e0"/>
                         <outlet property="repeterPassordFeilmelding" destination="rha-ft-2zo" id="LCE-cK-qHG"/>
@@ -1793,10 +1800,10 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PzX-BG-8ai"/>
-        <segue reference="QYR-Oh-Vhm"/>
-        <segue reference="Y6v-d1-Moc"/>
+        <segue reference="CHB-Lc-3tu"/>
+        <segue reference="y6B-Zf-oti"/>
         <segue reference="2Aj-zm-v0O"/>
         <segue reference="QHQ-Tr-2QG"/>
+        <segue reference="Y6v-d1-Moc"/>
     </inferredMetricsTieBreakers>
 </document>

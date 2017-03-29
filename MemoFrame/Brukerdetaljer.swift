@@ -18,6 +18,14 @@ class Brukerdetaljer: UIViewController {
     @IBOutlet weak var repeterPassordFeilmelding: UILabel!
     
     
+    @IBOutlet weak var epostFelten: UITextField!
+    
+    @IBOutlet weak var epostFeltto: UITextField!
+    
+    @IBOutlet weak var gammelPassord: UITextField!
+    
+    @IBOutlet weak var nyPassord: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,5 +48,34 @@ class Brukerdetaljer: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func endre(_ sender: UIButton) {
+        
+    let regex = Regex()
+        var epost :Bool = false
+        var veriepost:Bool = false
+        var likeEmail :Bool = false
+        
+    if(regex.verifiserEpost(tekst: epostFelten.text!)){
+    epost = true
+     }
+    if(regex.verifiserEpost(tekst: epostFeltto.text!)){
+    veriepost = true
+     }
+     if(epostFelten == epostFeltto){
+        likeEmail = true
+    }
+     if(epost!){
+        emailFeilmelding.isHidden = false
+    }
+    if(veriEpost!){
+            repeterEmailFeilmelding.isHidden = false
+        }
+    if(likeEmail!){
+            repeterEmailFeilmelding.isHidden = false
+    }
+    else if(epost && veriepost && likeEmail) {
+        //her kommer kode for å endre passord. MERK: det er enda ikke sjekket om passord er riktig!
+        }
+        
+ }
 }
