@@ -64,13 +64,13 @@ class Brukerdetaljer: UIViewController {
      if(epostFelten == epostFeltto){
         likeEmail = true
     }
-     if(epost!){
+     if(epost){
         emailFeilmelding.isHidden = false
     }
-    if(veriEpost!){
+    if(veriepost){
             repeterEmailFeilmelding.isHidden = false
         }
-    if(likeEmail!){
+    if(likeEmail){
             repeterEmailFeilmelding.isHidden = false
     }
     else if(epost && veriepost && likeEmail) {
