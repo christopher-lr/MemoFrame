@@ -28,7 +28,6 @@
 		F43F88CD1E72AA4E00FDEF36 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88CC1E72AA4E00FDEF36 /* Regex.swift */; };
 		F43F88CF1E76402E00FDEF36 /* Hovedmeny.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88CE1E76402E00FDEF36 /* Hovedmeny.swift */; };
 		F43F88D11E7648FA00FDEF36 /* Instillinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88D01E7648FA00FDEF36 /* Instillinger.swift */; };
-		F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */; };
 		F44D3E941E704BF0001463B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E921E704BF0001463B0 /* Main.storyboard */; };
 		F44D3E961E704BF0001463B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E951E704BF0001463B0 /* Assets.xcassets */; };
 		F44D3E991E704BF0001463B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D3E971E704BF0001463B0 /* LaunchScreen.storyboard */; };
@@ -37,6 +36,11 @@
 		F49C9F3E1E8315DB00453BCE /* Bruker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49C9F3D1E8315DB00453BCE /* Bruker.swift */; };
 		F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */; };
 		F4B4FABC1E76C11C00D76CA2 /* TestViaKode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */; };
+		F4F021CB1E91A30800074BEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F021CA1E91A30800074BEF /* AppDelegate.swift */; };
+		F4F021CF1E91A3D100074BEF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F021CE1E91A3D100074BEF /* Bolts.framework */; };
+		F4F021D11E91A3F800074BEF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F021D01E91A3F800074BEF /* FBSDKCoreKit.framework */; };
+		F4F021D31E91A40700074BEF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F021D21E91A40700074BEF /* FBSDKLoginKit.framework */; };
+		F4F021D51E91A41700074BEF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F021D41E91A41700074BEF /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +85,6 @@
 		F43F88CE1E76402E00FDEF36 /* Hovedmeny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hovedmeny.swift; sourceTree = "<group>"; };
 		F43F88D01E7648FA00FDEF36 /* Instillinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instillinger.swift; sourceTree = "<group>"; };
 		F44D3E8B1E704BF0001463B0 /* MemoFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F44D3E931E704BF0001463B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F44D3E951E704BF0001463B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F44D3E981E704BF0001463B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,6 +98,11 @@
 		F49C9F3D1E8315DB00453BCE /* Bruker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bruker.swift; sourceTree = "<group>"; };
 		F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brukerdetaljer.swift; sourceTree = "<group>"; };
 		F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViaKode.swift; sourceTree = "<group>"; };
+		F4F021CA1E91A30800074BEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MemoFrame/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		F4F021CE1E91A3D100074BEF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Documents/FacebookSDKs-iOS-4/Bolts.framework"; sourceTree = "<group>"; };
+		F4F021D01E91A3F800074BEF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Documents/FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		F4F021D21E91A40700074BEF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Documents/FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		F4F021D41E91A41700074BEF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Documents/FacebookSDKs-iOS-4/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +113,15 @@
 				AF5913D71E8E5A3D00A7F9CC /* AlamofireImage.framework in Frameworks */,
 				AF04499F1E85F80E00A0A3BE /* FBSDKCoreKit.framework in Frameworks */,
 				AF04499C1E85E9A900A0A3BE /* FBSDKLoginKit.framework in Frameworks */,
+				F4F021D31E91A40700074BEF /* FBSDKLoginKit.framework in Frameworks */,
 				AF424EBA1E7A03A400AC5B48 /* JWT.framework in Frameworks */,
 				AF424EB81E7A03A000AC5B48 /* CryptoSwift.framework in Frameworks */,
 				AF502F161E7877E60020C24B /* PopupDialog.framework in Frameworks */,
+				F4F021D51E91A41700074BEF /* FBSDKShareKit.framework in Frameworks */,
 				AF5B05351E77276900E97D32 /* Alamofire.framework in Frameworks */,
 				B381C8D8F38A79A0863A4C4B /* Pods_MemoFrame.framework in Frameworks */,
+				F4F021D11E91A3F800074BEF /* FBSDKCoreKit.framework in Frameworks */,
+				F4F021CF1E91A3D100074BEF /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +157,10 @@
 				AF5913D61E8E5A3D00A7F9CC /* AlamofireImage.framework */,
 				AF04499E1E85F80E00A0A3BE /* FBSDKCoreKit.framework */,
 				AF04499B1E85E9A900A0A3BE /* FBSDKLoginKit.framework */,
+				F4F021D41E91A41700074BEF /* FBSDKShareKit.framework */,
+				F4F021D21E91A40700074BEF /* FBSDKLoginKit.framework */,
+				F4F021D01E91A3F800074BEF /* FBSDKCoreKit.framework */,
+				F4F021CE1E91A3D100074BEF /* Bolts.framework */,
 				AF424EB91E7A03A400AC5B48 /* JWT.framework */,
 				AF424EB71E7A03A000AC5B48 /* CryptoSwift.framework */,
 				AF502F151E7877E60020C24B /* PopupDialog.framework */,
@@ -157,7 +173,7 @@
 		AF04499D1E85F25400A0A3BE /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				F44D3E8E1E704BF0001463B0 /* AppDelegate.swift */,
+				F4F021CA1E91A30800074BEF /* AppDelegate.swift */,
 			);
 			path = "Application Delegate";
 			sourceTree = "<group>";
@@ -450,11 +466,11 @@
 				F43F88CB1E72AA0E00FDEF36 /* RegistreringTilbakemelding.swift in Sources */,
 				F43F88D11E7648FA00FDEF36 /* Instillinger.swift in Sources */,
 				F43F88CD1E72AA4E00FDEF36 /* Regex.swift in Sources */,
+				F4F021CB1E91A30800074BEF /* AppDelegate.swift in Sources */,
 				F43F88C51E729BAE00FDEF36 /* KontaktOss.swift in Sources */,
 				F49C9F3E1E8315DB00453BCE /* Bruker.swift in Sources */,
 				F49FDB7A1E7652E900F4B8B2 /* Brukerdetaljer.swift in Sources */,
 				F43F88C91E72A9F400FDEF36 /* Registrering.swift in Sources */,
-				F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */,
 				F43F88C71E72A0F500FDEF36 /* Facebook.swift in Sources */,
 				AF92A09F1E94408A00E10509 /* CollectionViewController.swift in Sources */,
 				F43F88C31E729B9F00FDEF36 /* Informasjon.swift in Sources */,
@@ -622,7 +638,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CryptoSwift\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/JSONWebToken\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/PopupDialog\"",
-					"~/Documents/FacebookSDK",
+					"~/Documents/FacebookSDKs-iOS-4",
 				);
 				INFOPLIST_FILE = MemoFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -643,7 +659,7 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CryptoSwift\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/JSONWebToken\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/PopupDialog\"",
-					"~/Documents/FacebookSDK",
+					"~/Documents/FacebookSDKs-iOS-4",
 				);
 				INFOPLIST_FILE = MemoFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
