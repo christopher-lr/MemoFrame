@@ -12,7 +12,11 @@
 		AF424EB81E7A03A000AC5B48 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF424EB71E7A03A000AC5B48 /* CryptoSwift.framework */; };
 		AF424EBA1E7A03A400AC5B48 /* JWT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF424EB91E7A03A400AC5B48 /* JWT.framework */; };
 		AF502F161E7877E60020C24B /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF502F151E7877E60020C24B /* PopupDialog.framework */; };
+		AF5913D71E8E5A3D00A7F9CC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5913D61E8E5A3D00A7F9CC /* AlamofireImage.framework */; };
 		AF5B05351E77276900E97D32 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5B05341E77276900E97D32 /* Alamofire.framework */; };
+		AF92A09D1E943F7F00E10509 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF92A09C1E943F7F00E10509 /* CollectionViewCell.swift */; };
+		AF92A09F1E94408A00E10509 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF92A09E1E94408A00E10509 /* CollectionViewController.swift */; };
+		AFE2DF461E8D4C52006C7613 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE2DF451E8D4C52006C7613 /* Demo.swift */; };
 		B381C8D8F38A79A0863A4C4B /* Pods_MemoFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6CBC09CFF6B11DD322BA0E /* Pods_MemoFrame.framework */; };
 		F43F88BF1E7282FE00FDEF36 /* Innlogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88BE1E7282FE00FDEF36 /* Innlogging.swift */; };
 		F43F88C11E7296CA00FDEF36 /* GlemtPassord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F88C01E7296CA00FDEF36 /* GlemtPassord.swift */; };
@@ -60,7 +64,11 @@
 		AF424EB71E7A03A000AC5B48 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrame-alofdsedcpbwtqapnakklaiapetj/Build/Products/Debug-iphonesimulator/CryptoSwift/CryptoSwift.framework"; sourceTree = "<group>"; };
 		AF424EB91E7A03A400AC5B48 /* JWT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWT.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrame-alofdsedcpbwtqapnakklaiapetj/Build/Products/Debug-iphonesimulator/JSONWebToken/JWT.framework"; sourceTree = "<group>"; };
 		AF502F151E7877E60020C24B /* PopupDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopupDialog.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrame-alofdsedcpbwtqapnakklaiapetj/Build/Products/Debug-iphonesimulator/PopupDialog/PopupDialog.framework"; sourceTree = "<group>"; };
+		AF5913D61E8E5A3D00A7F9CC /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrame-alofdsedcpbwtqapnakklaiapetj/Build/Products/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		AF5B05341E77276900E97D32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MemoFrame-alofdsedcpbwtqapnakklaiapetj/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		AF92A09C1E943F7F00E10509 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		AF92A09E1E94408A00E10509 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		AFE2DF451E8D4C52006C7613 /* Demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		BE3E998BA3E867688C1ACB33 /* Pods-MemoFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoFrame/Pods-MemoFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		F43F88BE1E7282FE00FDEF36 /* Innlogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Innlogging.swift; sourceTree = "<group>"; };
 		F43F88C01E7296CA00FDEF36 /* GlemtPassord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlemtPassord.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5913D71E8E5A3D00A7F9CC /* AlamofireImage.framework in Frameworks */,
 				AF04499F1E85F80E00A0A3BE /* FBSDKCoreKit.framework in Frameworks */,
 				AF04499C1E85E9A900A0A3BE /* FBSDKLoginKit.framework in Frameworks */,
 				AF424EBA1E7A03A400AC5B48 /* JWT.framework in Frameworks */,
@@ -133,6 +142,7 @@
 		9E1A3F6E076D75BA7CA0EC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF5913D61E8E5A3D00A7F9CC /* AlamofireImage.framework */,
 				AF04499E1E85F80E00A0A3BE /* FBSDKCoreKit.framework */,
 				AF04499B1E85E9A900A0A3BE /* FBSDKLoginKit.framework */,
 				AF424EB91E7A03A400AC5B48 /* JWT.framework */,
@@ -175,6 +185,9 @@
 				F43F88D01E7648FA00FDEF36 /* Instillinger.swift */,
 				F49FDB791E7652E900F4B8B2 /* Brukerdetaljer.swift */,
 				F4B4FABB1E76C11C00D76CA2 /* TestViaKode.swift */,
+				AFE2DF451E8D4C52006C7613 /* Demo.swift */,
+				AF92A09C1E943F7F00E10509 /* CollectionViewCell.swift */,
+				AF92A09E1E94408A00E10509 /* CollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -443,8 +456,11 @@
 				F43F88C91E72A9F400FDEF36 /* Registrering.swift in Sources */,
 				F44D3E8F1E704BF0001463B0 /* AppDelegate.swift in Sources */,
 				F43F88C71E72A0F500FDEF36 /* Facebook.swift in Sources */,
+				AF92A09F1E94408A00E10509 /* CollectionViewController.swift in Sources */,
 				F43F88C31E729B9F00FDEF36 /* Informasjon.swift in Sources */,
+				AF92A09D1E943F7F00E10509 /* CollectionViewCell.swift in Sources */,
 				F43F88C11E7296CA00FDEF36 /* GlemtPassord.swift in Sources */,
+				AFE2DF461E8D4C52006C7613 /* Demo.swift in Sources */,
 				F4B4FABC1E76C11C00D76CA2 /* TestViaKode.swift in Sources */,
 				F43F88CF1E76402E00FDEF36 /* Hovedmeny.swift in Sources */,
 				F43F88BF1E7282FE00FDEF36 /* Innlogging.swift in Sources */,

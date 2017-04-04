@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - CryptoSwift (0.6.7)
   - JSONWebToken (2.0.2):
     - CryptoSwift (~> 0.6.1)
@@ -7,15 +9,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AlamofireImage (~> 3.1)
   - JSONWebToken
   - PopupDialog (~> 0.5)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
   JSONWebToken: ca86f02eeb3d1f58ba5197ec2cd53c7de915ecc1
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
 
-PODFILE CHECKSUM: a66afa19cbc34c7457444956b32e576b19917eeb
+PODFILE CHECKSUM: 4455662d19e4dd390b1cda77b2f62c66e39fe6f8
 
 COCOAPODS: 1.2.0

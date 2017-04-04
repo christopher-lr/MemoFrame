@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo-->
         <scene sceneID="YAB-5z-mDx">
             <objects>
-                <viewController id="fQZ-zY-2p2" sceneMemberID="viewController">
+                <viewController id="fQZ-zY-2p2" customClass="Demo" customModule="MemoFrame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GyV-sX-OGc"/>
                         <viewControllerLayoutGuide type="bottom" id="dII-vm-R0s"/>
@@ -30,20 +30,89 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="bT7-KH-Jat"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Testoppgave, demo, en forklarende tutorial]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAL-iX-dEf">
-                                <rect key="frame" x="33" y="220" width="340" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Poeng:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V50-bG-0m1">
+                                <rect key="frame" x="20" y="53" width="54" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMd-QV-Tjq">
+                                <rect key="frame" x="82" y="54" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARN-oJ-vvh">
+                                <rect key="frame" x="292" y="53" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYn-Aw-yr3">
+                                <rect key="frame" x="104" y="658" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Neste"/>
+                                <connections>
+                                    <action selector="neste:" destination="fQZ-zY-2p2" eventType="touchUpInside" id="gv9-cF-vFg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iiv-NC-YAH">
+                                <rect key="frame" x="104" y="658" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Avslutt"/>
+                                <connections>
+                                    <action selector="avslutt:" destination="fQZ-zY-2p2" eventType="touchUpInside" id="3Ol-On-DQk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P5-Ui-fQZ">
+                                <rect key="frame" x="104" y="658" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start demoen!"/>
+                                <connections>
+                                    <action selector="start:" destination="fQZ-zY-2p2" eventType="touchUpInside" id="N0b-Vs-FIs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjm-JB-DHX">
+                                <rect key="frame" x="104" y="658" width="198" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Avgi svar"/>
+                                <connections>
+                                    <action selector="svar:" destination="fQZ-zY-2p2" eventType="touchUpInside" id="1pD-KG-rJN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bilde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3Q-vO-7ZX">
+                                <rect key="frame" x="241" y="53" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCj-zu-3AE">
+                                <rect key="frame" x="10" y="95" width="387" height="526"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="avslutt" destination="Iiv-NC-YAH" id="yET-OY-AhB"/>
+                        <outlet property="bilde" destination="W3Q-vO-7ZX" id="rc0-Y1-pov"/>
+                        <outlet property="bildeRamme" destination="hCj-zu-3AE" id="ubZ-BX-MjI"/>
+                        <outlet property="bildenr" destination="ARN-oJ-vvh" id="cn1-0z-OuS"/>
+                        <outlet property="neste" destination="lYn-Aw-yr3" id="boK-JH-uTl"/>
+                        <outlet property="poeng" destination="V50-bG-0m1" id="dsf-Rj-dVz"/>
+                        <outlet property="poengsum" destination="pMd-QV-Tjq" id="r5q-76-4L6"/>
+                        <outlet property="start" destination="9P5-Ui-fQZ" id="A4P-OE-Q6d"/>
+                        <outlet property="svar" destination="Fjm-JB-DHX" id="Lpl-Ki-fsD"/>
+                        <outletCollection property="samling" destination="hCj-zu-3AE" collectionClass="NSMutableArray" id="tuR-ip-OJG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYf-Vc-BEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1445" y="-612"/>
+            <point key="canvasLocation" x="-1446.376811594203" y="-612.22826086956525"/>
         </scene>
         <!--Test Via Kode-->
         <scene sceneID="a7x-H9-jbC">
@@ -1800,10 +1869,10 @@
         <image name="speaker" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CHB-Lc-3tu"/>
-        <segue reference="y6B-Zf-oti"/>
-        <segue reference="2Aj-zm-v0O"/>
         <segue reference="QHQ-Tr-2QG"/>
+        <segue reference="bT7-KH-Jat"/>
+        <segue reference="y08-1v-3c0"/>
+        <segue reference="2Aj-zm-v0O"/>
         <segue reference="Y6v-d1-Moc"/>
     </inferredMetricsTieBreakers>
 </document>

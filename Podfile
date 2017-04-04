@@ -8,4 +8,7 @@ target 'MemoFrame' do
 pod 'PopupDialog', '~> 0.5'
 
 pod 'JSONWebToken'
+
+pod 'AlamofireImage', '~> 3.1'
+
 end

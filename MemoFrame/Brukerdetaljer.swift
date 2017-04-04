@@ -50,10 +50,16 @@ class Brukerdetaljer: UIViewController {
     
     @IBAction func endre(_ sender: UIButton) {
         
+        emailFeilmelding.isHidden = true
+        repeterEmailFeilmelding.isHidden = true
+        passordFeilmelding.isHidden = true
+        repeterPassordFeilmelding.isHidden = true
+        
     let regex = Regex()
         var epost :Bool = false
         var veriepost:Bool = false
         var likeEmail :Bool = false
+        var pass: Bool = false
         
     if(regex.verifiserEpost(tekst: epostFelten.text!)){
     epost = true
@@ -64,17 +70,30 @@ class Brukerdetaljer: UIViewController {
      if(epostFelten == epostFeltto){
         likeEmail = true
     }
-     if(epost!){
+    if(gammelPassord.text! != nil && nyPassord.text! != nil){
+            pass = true
+        }
+     if(!epost){
         emailFeilmelding.isHidden = false
     }
-    if(veriEpost!){
+    if(!veriepost){
             repeterEmailFeilmelding.isHidden = false
         }
-    if(likeEmail!){
+    if(!likeEmail){
             repeterEmailFeilmelding.isHidden = false
     }
-    else if(epost && veriepost && likeEmail) {
+    if(!pass){
+        passordFeilmelding.isHidden = false
+        repeterPassordFeilmelding.isHidden = false
+        }
+    else if(epost && veriepost && likeEmail && pass) {
         //her kommer kode for å endre passord. MERK: det er enda ikke sjekket om passord er riktig!
+        
+        let alert = UIAlertController(title: "Melding", message: "Passord oppdatert!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        print("ok")
         }
         
  }
